@@ -1,3 +1,5 @@
+package com.example.db;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
