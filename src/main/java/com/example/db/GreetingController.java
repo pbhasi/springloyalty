@@ -1,4 +1,4 @@
-package com.example.rest_service;
+package com.example.db;
 
 //import java.util.concurrent.atomic.AtomicLong;
 //import org.hibernate.mapping.List;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.db.*;
+
 import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/greetings")
+@RequestMapping("/api")
 public class GreetingController {
 
 	@Autowired
@@ -25,10 +25,12 @@ public class GreetingController {
 	//private static final String template = "Hello, %s!";
 	//private final AtomicLong counter = new AtomicLong();
 
-    @GetMapping
+    @GetMapping("/greetings")
     public ResponseEntity<List<Greeting>> getAllGreetings() {
         List<Greeting> greetings = greetingService.getAllGreetings();
+        System.out.println(greetings);
         return ResponseEntity.ok(greetings);
     }
+	
 
 }

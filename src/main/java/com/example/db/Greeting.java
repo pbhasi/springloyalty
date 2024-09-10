@@ -1,10 +1,15 @@
 package com.example.db;
 
-import javax.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Greetings")
+@Table(name = "greetings")
 public class Greeting {
 
     @Id
